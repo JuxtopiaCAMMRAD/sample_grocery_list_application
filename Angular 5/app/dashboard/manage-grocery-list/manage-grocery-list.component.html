@@ -1,0 +1,25 @@
+<mat-list>
+  <h2> &nbsp;&nbsp; Grocery List</h2>
+  <mat-list-item *ngFor="let item of grocery_list">
+    <mat-icon mat-list-icon (click)="RemoveGroceryItem(item.GROCERY_ITEM_ID)" >delete_forever</mat-icon>
+      <h4 mat-line><b>{{item.text}}</b></h4>
+    <p mat-line> {{item.createdAt | date}} </p>
+  </mat-list-item>
+  <mat-divider></mat-divider>
+
+</mat-list>
+
+<div style="margin-left:50px;margin-top:50px;">
+   <mat-form-field class="example-full-width">
+                    <input matInput type="text" [(ngModel)]="grocery_item.text" placeholder="Add new item">
+   </mat-form-field>
+    
+  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Quantity" type="number" [(ngModel)]="grocery_item.quantity">
+   </mat-form-field>
+   
+  <button mat-raised-button (click)="AddNewGroceryItem()">ADD</button>
+  
+</div>
+
+                    

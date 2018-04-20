@@ -1,0 +1,20 @@
+<form name="userform" method="post" #loginForm="ngForm" style="margin:50px;">
+    
+    
+                    <h3>Login Form</h3>
+                    
+                    <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Email address" type="email" [(ngModel)]="user.email" required name="email">
+                  </mat-form-field>
+                    
+                    <br>
+                    
+                       <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Password" type="password" [(ngModel)]="user.password" required name="password">
+                  </mat-form-field>
+                    
+                    <br>
+                    
+                  <button mat-raised-button (click)="login()" [disabled]="loginForm.form.invalid">Log In</button>
+
+</form>
